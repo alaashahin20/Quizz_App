@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:quizapp1/widget/category_container.dart';
+import 'Screens/category_screen.dart';
 import 'Screens/opening_screen.dart';
 import 'Screens/Login_Screen.dart';
+import 'Screens/quiz_screen.dart';
+import 'Screens/scor_screen.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -11,12 +16,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        
+        debugShowCheckedModeBanner: false,
         title: '  Quiz App',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: LoginScreen()
+        home:QuizScreen()
 
        
         );
