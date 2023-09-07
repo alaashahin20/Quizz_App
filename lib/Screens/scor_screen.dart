@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:quizapp1/Glopal/quiz_data.dart';
 import 'package:quizapp1/Screens/opening_screen.dart';
 
 class ScorScreen extends StatelessWidget {
-  const ScorScreen({super.key});
+  final int totalScor1 ;final int totalNumofQuistion;
+  const ScorScreen({super.key , required this.totalScor1 , required this.totalNumofQuistion});
 
   @override
   Widget build(BuildContext context) {
@@ -19,12 +21,12 @@ class ScorScreen extends StatelessWidget {
               style: TextStyle(color: Colors.black, fontSize: 20),
               children: [
                 TextSpan(
-                  text: "Aalaa \n",
+                  text: "${userNameController.text} \n",
                   style: TextStyle(color: Colors.green, fontSize: 25),
                 ),
                 TextSpan(text: "your score is  "),
                 TextSpan(
-                    text: "6/10",
+                    text: "${totalScor1} / ${totalNumofQuistion}",
                     style: TextStyle(color: Colors.green, fontSize: 25)),
               ],
             )),
@@ -39,10 +41,20 @@ class ScorScreen extends StatelessWidget {
                     (Route<dynamic> route) => false,
                   );
                 },
-                child: Text("Play again"))
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context, 
+                    MaterialPageRoute(builder: (BuildContext context){
+                      return OpeningScreen();
+
+                    }));
+                  },
+                  child: Text("Play again")))
           ],
         ),
       ),
     );
   }
+
+  
 }

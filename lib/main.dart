@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home:LoginScreen()
+        home: CategoryScreen()
 
        
         );
@@ -97,7 +97,7 @@ class _OurFirstScreenState extends State<OurFirstScreen> {
               ),
 
               const Text(
-                'لقد قمت بالضغط على الزر هذا العدد من المرات',
+                "",
                 style: TextStyle(fontSize: 25),
               ),
               Text(
